@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.batch.batch_20220522">
+
+    <select id="selectTest" parameterType="hashmap"	resultType="com.example.batch.batch_20220522.Person">
+        SELECT first_name,last_name
+        FROM monkey.people_new
+    </select>
+
+    <insert id="insertTest" parameterType="com.example.batch.batch_20220522.Person">
+        insert into monkey.people_new(first_name,last_name) values (#{first_name,jdbcType=VARCHAR},#{last_name,jdbcType=VARCHAR})
+    </insert>
+
+</mapper>
